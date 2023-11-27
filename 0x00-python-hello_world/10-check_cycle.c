@@ -1,31 +1,34 @@
 #include "lists.h"
 
 /**
- * check_cycle - checks if a singly linked list has a cycle
- * @list: pointer to the head of the linked list
+ * check_cycle - function that checks if a singly linked list has a cycle in it
+ *
+ * Description: function in C that checks if a singly linked list has a cycle
+ * in it.
+ *
+ * @list: pointer to head
  *
  * Return: 0 if there is no cycle, 1 if there is a cycle
  */
 int check_cycle(listint_t *list)
 {
-	if (list == NULL || list->next == NULL)
-	{
-		return (0); /* No cycle if the list is empty or has only one element */
-	}
+	listint_t *hare, *tortoise;
 
-	listint_t *tortoise = list;
-	listint_t *hare = list;
+	if (list == NULL)
+		return (0);
 
-	while (hare != NULL && hare->next != NULL)
+	tortoise = list;
+	hare = list->next;
+
+	if (hare == NULL)
+		return (0);
+
+	while (tortoise != hare)
 	{
+		if (hare->next == NULL || hare->next->next == NULL)
+			return (0);
 		tortoise = tortoise->next;
 		hare = hare->next->next;
-
-		if (tortoise == hare)
-		{
-			return (1); /* Cycle detected */
-		}
 	}
-
-	return (0); /* No cycle found */
+	return (1);
 }
