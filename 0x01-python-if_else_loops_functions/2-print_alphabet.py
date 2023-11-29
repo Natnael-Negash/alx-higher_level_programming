@@ -1,3 +1,3 @@
 #!/user/bin/python3
-for char_number in range(97, 123):
-    print("{character}".format(character=chr(char_number)), end="")
+for i in range(ord('a'), ord('z') + 1):
+    print(chr(i), end='')
