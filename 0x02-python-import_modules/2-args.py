@@ -6,6 +6,8 @@ num_argc = len(argv) - 1
 def print_arguments():
     if num_argc == 0:
         print(f"{num_argc} arguments.")
+    elif num_argc == 1:
+        print(f"{num_argc} argument:")
     else:
         print(f"{num_argc} arguments:")
         for i in range(1,len(argv)):
