@@ -8,3 +8,5 @@ def square_matrix_simple(matrix=[]):
 
         for y in matrix[a]:
             newsquare[a}.append(y**2)
+            a += 1
+            return (newsquare)
