@@ -15,3 +15,4 @@ function translate() {
         $('#hello').text(data.hello);
     });
 }
+#hh
