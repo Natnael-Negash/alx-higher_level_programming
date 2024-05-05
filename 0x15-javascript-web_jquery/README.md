@@ -1,1 +1,1 @@
-Javascript web jquery
+Javascript web jQuery 
